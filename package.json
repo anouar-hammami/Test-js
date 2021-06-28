@@ -4,7 +4,7 @@
   "description": " A cli test",
   "main": "index.ts",
   "scripts": {
-    "build": "tsc && node dist/app.js",
+    "build": "npm test && tsc && node dist/app.js",
     "dev": "  nodemon --watch src/**/*.ts  --exec   \"ts-node\"  src/app.ts",
     "test": "jest",
     "eslint": "eslint src/**/*.ts",
