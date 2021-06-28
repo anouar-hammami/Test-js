@@ -15,7 +15,7 @@ export const getActionFromArgs = (data: Country[], args: string[]): void => {
       const paramForFilter = funcitonWithParam[1];
       paramForFilter
         ? console.log(JSON.stringify(filter(data, paramForFilter), null, ' '))
-        : console.log('Enter valid args for filter function');
+        : console.warn('Enter valid args for filter function');
       break;
     }
     case 'count': {
@@ -23,11 +23,11 @@ export const getActionFromArgs = (data: Country[], args: string[]): void => {
       // avoid --count=  and  --count=xxx
       !paramForCount && !functionToExcute.includes('=')
         ? console.log(JSON.stringify(count(data), null, ' '))
-        : console.log('No needed args for count function ');
+        : console.warn('No needed args for count function ');
       break;
     }
     default: {
-      console.log('Enter valid arguments');
+      console.error('Enter valid arguments');
       break;
     }
   }
